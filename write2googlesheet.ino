@@ -3,7 +3,7 @@
 */
 
 
-#include <ESP8266WiFi.h>
+//#include <ESP8266WiFi.h>
 #include <WiFiClientSecure.h>
 
 String readString;
@@ -17,7 +17,10 @@ const int httpsPort = 443;
 WiFiClientSecure client;
 
 
-const char* fingerprint = "46 B2 C3 44 9C 59 09 8B 01 B6 F8 BD 4C FB 00 74 91 2F EF F6";
+//const char* fingerprint = "46 B2 C3 44 9C 59 09 8B 01 B6 F8 BD 4C FB 00 74 91 2F EF F6";
+
+const char* fingerprint = "79 D5 16 07 E2 38 0E 84 51 4F F2 7B 52 98 9B 9D 01 FC B1 E8";
+
 String GAS_ID = "AKxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxw";  // Replace by your GAS service id
 
 void setup()
@@ -42,12 +45,6 @@ void setup()
   Serial.println("WiFi connected");
   Serial.println("IP address: ");
   Serial.println(WiFi.localIP());
-
-  //sendData(113, 125, 1); // Send test data
-  sds.begin();
-
-  Serial.println(sds.queryFirmwareVersion().toString()); // prints firmware version
-  Serial.println(sds.setQueryReportingMode().toString()); // ensures sensor is in 'query' reporting mode
 
 }
 
